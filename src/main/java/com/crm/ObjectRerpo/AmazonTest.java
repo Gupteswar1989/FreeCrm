@@ -124,7 +124,7 @@ public class AmazonTest {
 		 * Select EMI Option 
 		 */
 		driver.findElement(By.xpath("//input[@type='radio' and @value='instrumentId=EMI&isExpired=false&paymentMethod=CC&tfxEligible=false']")).click();
-	 
+	 driver.close();
 		
 	}
 
