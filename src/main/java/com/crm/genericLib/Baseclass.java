@@ -16,14 +16,14 @@ import com.crm.ObjectRerpo.LoginPage;
 public class Baseclass {
 
 	WebDriver webDriver;
-	Filelibrary filelibrary;
+	Filelibrary filelibrary1;
 
 	@BeforeClass
 	public void configBerforClass() throws Throwable {
 
-		filelibrary = new Filelibrary();
+		filelibrary1 = new Filelibrary();
 
-		String BROWSER_NAME = filelibrary.getPropertiesObect().getProperty("browser");
+		String BROWSER_NAME = filelibrary1.getPropertiesObect().getProperty("browser");
 
 		if (BROWSER_NAME.contains("chrome")) {
 
@@ -38,12 +38,12 @@ public class Baseclass {
 	@BeforeMethod
 	public void configBeforMethod() throws Throwable {
 		
-		filelibrary =new Filelibrary();
+		filelibrary1 =new Filelibrary();
 		WebdriverCommonLib commonLib=new WebdriverCommonLib();
 		
 		webDriver.manage().window().maximize();
 		commonLib.waitToPageLoad(webDriver);
-		webDriver.navigate().to(filelibrary.getPropertiesObect().getProperty("url"));
+		webDriver.navigate().to(filelibrary1.getPropertiesObect().getProperty("url"));
 		LoginPage loginPage=PageFactory.initElements(webDriver, LoginPage.class);
 		loginPage.LogInToApp();
 
